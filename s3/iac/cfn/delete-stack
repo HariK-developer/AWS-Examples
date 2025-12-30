@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+echo "Deleting CloudFormation template to create S3 bucket..."
+
+STACK_NAME="s3-bucket-stack-$(date +%s)"
+
+aws cloudformation delete-stack \
+--stack-name $STACK_NAME \
+--region ap-south-1
