@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>My Website Home Page</title>
+</head>
+<body>
+  <h1>Welcome to my website</h1>
+  <p>Now hosted on Amazon S3!</p>
+  <script src="text/javascript" >
+    console.log("Hello from my S3 hosted website!");
+    // call the api using xhr
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://wo05mvw6je.execute-api.ap-south-1.amazonaws.com/prod/hello", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        console.log("API Response: " + xhr.responseText);
+      }
+    };
+    xhr.send();
+    
+    
+  </script>
+</body>
+</html>
